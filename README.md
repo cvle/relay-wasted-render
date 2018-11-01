@@ -1,3 +1,5 @@
+** **Fixed in Relay 2.0.0-rc.1** **
+
 # Relay wasted rerender
 
 This is a repo with minimal code to showcase an issue within Relay.
