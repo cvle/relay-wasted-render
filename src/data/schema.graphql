@@ -1,0 +1,37 @@
+scalar Cursor
+
+type PageInfo {
+  hasNextPage: Boolean!
+  hasPreviousPage: Boolean!
+  startCursor: Cursor
+  endCursor: Cursor
+}
+
+type User {
+  id: ID!
+  username: String!
+}
+
+type Item {
+  id: ID!
+  name: String
+}
+
+type ItemEdge {
+  node: Item!
+  cursor: Cursor
+}
+
+type ItemsConnection {
+  edges: [ItemEdge!]!
+  pageInfo: PageInfo!
+}
+
+type List {
+  items(first: Int = 1, after: Cursor): ItemsConnection!
+}
+
+type Query {
+  me: User
+  list: List
+}
