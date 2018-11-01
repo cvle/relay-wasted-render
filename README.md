@@ -11,7 +11,6 @@ list has not been changed.
 
 ```bash
   npm install
-  npm run compile
   npm start
 ```
 
