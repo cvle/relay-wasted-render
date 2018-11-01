@@ -1,6 +1,6 @@
 # Relay wasted rerender
 
-This is a repo with minimal code to show case an issue within Relay.
+This is a repo with minimal code to showcase an issue within Relay.
 
 ## What issue
 
