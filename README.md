@@ -13,7 +13,7 @@ list has not been changed.
 
 ```bash
   npm install
-  npm start
+  npm run start
 ```
 
 Open the console and click on `Load More` to paginate. See console

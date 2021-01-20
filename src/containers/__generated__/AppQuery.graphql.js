@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash ce263f976475affe7d61120fa49ce118
+ * @relayHash af904dba8bdad6ac31e9cc0852727cfb
  */
 
 /* eslint-disable */
@@ -82,17 +82,11 @@ v1 = [
   {
     "kind": "Literal",
     "name": "first",
-    "value": 1,
-    "type": "Int"
+    "value": 1
   }
 ];
 return {
   "kind": "Request",
-  "operationKind": "query",
-  "name": "AppQuery",
-  "id": null,
-  "text": "query AppQuery {\n  me {\n    ...ItemListContainer_me\n    id\n  }\n  list {\n    ...ItemListContainer_list\n  }\n}\n\nfragment ItemListContainer_me on User {\n  username\n  ...ItemContainer_me\n}\n\nfragment ItemListContainer_list on List {\n  items(first: 1) {\n    edges {\n      node {\n        id\n        ...ItemContainer_item\n        __typename\n      }\n      cursor\n    }\n    pageInfo {\n      endCursor\n      hasNextPage\n    }\n  }\n}\n\nfragment ItemContainer_item on Item {\n  id\n  name\n}\n\nfragment ItemContainer_me on User {\n  id\n}\n",
-  "metadata": {},
   "fragment": {
     "kind": "Fragment",
     "name": "AppQuery",
@@ -155,7 +149,7 @@ return {
             "args": null,
             "storageKey": null
           },
-          v0
+          (v0/*: any*/)
         ]
       },
       {
@@ -172,7 +166,7 @@ return {
             "alias": null,
             "name": "items",
             "storageKey": "items(first:1)",
-            "args": v1,
+            "args": (v1/*: any*/),
             "concreteType": "ItemsConnection",
             "plural": false,
             "selections": [
@@ -194,7 +188,7 @@ return {
                     "concreteType": "Item",
                     "plural": false,
                     "selections": [
-                      v0,
+                      (v0/*: any*/),
                       {
                         "kind": "ScalarField",
                         "alias": null,
@@ -251,7 +245,7 @@ return {
             "kind": "LinkedHandle",
             "alias": null,
             "name": "items",
-            "args": v1,
+            "args": (v1/*: any*/),
             "handle": "connection",
             "key": "ItemList_items",
             "filters": null
@@ -259,6 +253,13 @@ return {
         ]
       }
     ]
+  },
+  "params": {
+    "operationKind": "query",
+    "name": "AppQuery",
+    "id": null,
+    "text": "query AppQuery {\n  me {\n    ...ItemListContainer_me\n    id\n  }\n  list {\n    ...ItemListContainer_list\n  }\n}\n\nfragment ItemListContainer_me on User {\n  username\n  ...ItemContainer_me\n}\n\nfragment ItemListContainer_list on List {\n  items(first: 1) {\n    edges {\n      node {\n        id\n        ...ItemContainer_item\n        __typename\n      }\n      cursor\n    }\n    pageInfo {\n      endCursor\n      hasNextPage\n    }\n  }\n}\n\nfragment ItemContainer_item on Item {\n  id\n  name\n}\n\nfragment ItemContainer_me on User {\n  id\n}\n",
+    "metadata": {}
   }
 };
 })();

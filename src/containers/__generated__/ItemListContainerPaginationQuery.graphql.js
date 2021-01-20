@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash d383090002157329deb54915840fdfe7
+ * @relayHash 62cbdf3831e24de1f8471ed291898874
  */
 
 /* eslint-disable */
@@ -78,29 +78,22 @@ v1 = [
   {
     "kind": "Variable",
     "name": "after",
-    "variableName": "cursor",
-    "type": "Cursor"
+    "variableName": "cursor"
   },
   {
     "kind": "Variable",
     "name": "first",
-    "variableName": "count",
-    "type": "Int"
+    "variableName": "count"
   }
 ];
 return {
   "kind": "Request",
-  "operationKind": "query",
-  "name": "ItemListContainerPaginationQuery",
-  "id": null,
-  "text": "query ItemListContainerPaginationQuery(\n  $count: Int!\n  $cursor: Cursor\n) {\n  list {\n    ...ItemListContainer_list_1G22uz\n  }\n}\n\nfragment ItemListContainer_list_1G22uz on List {\n  items(first: $count, after: $cursor) {\n    edges {\n      node {\n        id\n        ...ItemContainer_item\n        __typename\n      }\n      cursor\n    }\n    pageInfo {\n      endCursor\n      hasNextPage\n    }\n  }\n}\n\nfragment ItemContainer_item on Item {\n  id\n  name\n}\n",
-  "metadata": {},
   "fragment": {
     "kind": "Fragment",
     "name": "ItemListContainerPaginationQuery",
     "type": "Query",
     "metadata": null,
-    "argumentDefinitions": v0,
+    "argumentDefinitions": (v0/*: any*/),
     "selections": [
       {
         "kind": "LinkedField",
@@ -118,14 +111,12 @@ return {
               {
                 "kind": "Variable",
                 "name": "count",
-                "variableName": "count",
-                "type": null
+                "variableName": "count"
               },
               {
                 "kind": "Variable",
                 "name": "cursor",
-                "variableName": "cursor",
-                "type": null
+                "variableName": "cursor"
               }
             ]
           }
@@ -136,7 +127,7 @@ return {
   "operation": {
     "kind": "Operation",
     "name": "ItemListContainerPaginationQuery",
-    "argumentDefinitions": v0,
+    "argumentDefinitions": (v0/*: any*/),
     "selections": [
       {
         "kind": "LinkedField",
@@ -152,7 +143,7 @@ return {
             "alias": null,
             "name": "items",
             "storageKey": null,
-            "args": v1,
+            "args": (v1/*: any*/),
             "concreteType": "ItemsConnection",
             "plural": false,
             "selections": [
@@ -237,7 +228,7 @@ return {
             "kind": "LinkedHandle",
             "alias": null,
             "name": "items",
-            "args": v1,
+            "args": (v1/*: any*/),
             "handle": "connection",
             "key": "ItemList_items",
             "filters": null
@@ -245,6 +236,13 @@ return {
         ]
       }
     ]
+  },
+  "params": {
+    "operationKind": "query",
+    "name": "ItemListContainerPaginationQuery",
+    "id": null,
+    "text": "query ItemListContainerPaginationQuery(\n  $count: Int!\n  $cursor: Cursor\n) {\n  list {\n    ...ItemListContainer_list_1G22uz\n  }\n}\n\nfragment ItemListContainer_list_1G22uz on List {\n  items(first: $count, after: $cursor) {\n    edges {\n      node {\n        id\n        ...ItemContainer_item\n        __typename\n      }\n      cursor\n    }\n    pageInfo {\n      endCursor\n      hasNextPage\n    }\n  }\n}\n\nfragment ItemContainer_item on Item {\n  id\n  name\n}\n",
+    "metadata": {}
   }
 };
 })();
