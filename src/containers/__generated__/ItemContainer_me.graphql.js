@@ -7,17 +7,23 @@
 'use strict';
 
 /*::
-import type { ConcreteFragment } from 'relay-runtime';
+import type { ReaderFragment } from 'relay-runtime';
 import type { FragmentReference } from "relay-runtime";
 declare export opaque type ItemContainer_me$ref: FragmentReference;
+declare export opaque type ItemContainer_me$fragmentType: ItemContainer_me$ref;
 export type ItemContainer_me = {|
   +id: string,
   +$refType: ItemContainer_me$ref,
 |};
+export type ItemContainer_me$data = ItemContainer_me;
+export type ItemContainer_me$key = {
+  +$data?: ItemContainer_me$data,
+  +$fragmentRefs: ItemContainer_me$ref,
+};
 */
 
 
-const node/*: ConcreteFragment*/ = {
+const node/*: ReaderFragment*/ = {
   "kind": "Fragment",
   "name": "ItemContainer_me",
   "type": "User",

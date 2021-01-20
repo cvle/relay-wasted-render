@@ -7,10 +7,11 @@
 'use strict';
 
 /*::
-import type { ConcreteFragment } from 'relay-runtime';
+import type { ReaderFragment } from 'relay-runtime';
 type ItemContainer_item$ref = any;
 import type { FragmentReference } from "relay-runtime";
 declare export opaque type ItemListContainer_list$ref: FragmentReference;
+declare export opaque type ItemListContainer_list$fragmentType: ItemListContainer_list$ref;
 export type ItemListContainer_list = {|
   +items: {|
     +edges: $ReadOnlyArray<{|
@@ -22,10 +23,15 @@ export type ItemListContainer_list = {|
   |},
   +$refType: ItemListContainer_list$ref,
 |};
+export type ItemListContainer_list$data = ItemListContainer_list;
+export type ItemListContainer_list$key = {
+  +$data?: ItemListContainer_list$data,
+  +$fragmentRefs: ItemListContainer_list$ref,
+};
 */
 
 
-const node/*: ConcreteFragment*/ = {
+const node/*: ReaderFragment*/ = {
   "kind": "Fragment",
   "name": "ItemListContainer_list",
   "type": "List",
@@ -91,16 +97,16 @@ const node/*: ConcreteFragment*/ = {
                   "storageKey": null
                 },
                 {
-                  "kind": "FragmentSpread",
-                  "name": "ItemContainer_item",
-                  "args": null
-                },
-                {
                   "kind": "ScalarField",
                   "alias": null,
                   "name": "__typename",
                   "args": null,
                   "storageKey": null
+                },
+                {
+                  "kind": "FragmentSpread",
+                  "name": "ItemContainer_item",
+                  "args": null
                 }
               ]
             },
