@@ -18,3 +18,8 @@ list has not been changed.
 
 Open the console and click on `Load More` to paginate. See console
 logs to find out how much was rerendered.
+
+If you changed the relay version, you should also run
+```bash
+  npm run compile
+```

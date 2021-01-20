@@ -1,6 +1,5 @@
 /**
  * @flow
- * @relayHash 62cbdf3831e24de1f8471ed291898874
  */
 
 /* eslint-disable */
@@ -36,6 +35,11 @@ query ItemListContainerPaginationQuery(
   }
 }
 
+fragment ItemContainer_item on Item {
+  id
+  name
+}
+
 fragment ItemListContainer_list_1G22uz on List {
   items(first: $count, after: $cursor) {
     edges {
@@ -52,26 +56,19 @@ fragment ItemListContainer_list_1G22uz on List {
     }
   }
 }
-
-fragment ItemContainer_item on Item {
-  id
-  name
-}
 */
 
 const node/*: ConcreteRequest*/ = (function(){
 var v0 = [
   {
+    "defaultValue": null,
     "kind": "LocalArgument",
-    "name": "count",
-    "type": "Int!",
-    "defaultValue": null
+    "name": "count"
   },
   {
+    "defaultValue": null,
     "kind": "LocalArgument",
-    "name": "cursor",
-    "type": "Cursor",
-    "defaultValue": null
+    "name": "cursor"
   }
 ],
 v1 = [
@@ -87,26 +84,21 @@ v1 = [
   }
 ];
 return {
-  "kind": "Request",
   "fragment": {
-    "kind": "Fragment",
-    "name": "ItemListContainerPaginationQuery",
-    "type": "Query",
-    "metadata": null,
     "argumentDefinitions": (v0/*: any*/),
+    "kind": "Fragment",
+    "metadata": null,
+    "name": "ItemListContainerPaginationQuery",
     "selections": [
       {
-        "kind": "LinkedField",
         "alias": null,
-        "name": "list",
-        "storageKey": null,
         "args": null,
         "concreteType": "List",
+        "kind": "LinkedField",
+        "name": "list",
         "plural": false,
         "selections": [
           {
-            "kind": "FragmentSpread",
-            "name": "ItemListContainer_list",
             "args": [
               {
                 "kind": "Variable",
@@ -118,134 +110,142 @@ return {
                 "name": "cursor",
                 "variableName": "cursor"
               }
-            ]
+            ],
+            "kind": "FragmentSpread",
+            "name": "ItemListContainer_list"
           }
-        ]
+        ],
+        "storageKey": null
       }
-    ]
+    ],
+    "type": "Query",
+    "abstractKey": null
   },
+  "kind": "Request",
   "operation": {
+    "argumentDefinitions": (v0/*: any*/),
     "kind": "Operation",
     "name": "ItemListContainerPaginationQuery",
-    "argumentDefinitions": (v0/*: any*/),
     "selections": [
       {
-        "kind": "LinkedField",
         "alias": null,
-        "name": "list",
-        "storageKey": null,
         "args": null,
         "concreteType": "List",
+        "kind": "LinkedField",
+        "name": "list",
         "plural": false,
         "selections": [
           {
-            "kind": "LinkedField",
             "alias": null,
-            "name": "items",
-            "storageKey": null,
             "args": (v1/*: any*/),
             "concreteType": "ItemsConnection",
+            "kind": "LinkedField",
+            "name": "items",
             "plural": false,
             "selections": [
               {
-                "kind": "LinkedField",
                 "alias": null,
-                "name": "edges",
-                "storageKey": null,
                 "args": null,
                 "concreteType": "ItemEdge",
+                "kind": "LinkedField",
+                "name": "edges",
                 "plural": true,
                 "selections": [
                   {
-                    "kind": "LinkedField",
                     "alias": null,
-                    "name": "node",
-                    "storageKey": null,
                     "args": null,
                     "concreteType": "Item",
+                    "kind": "LinkedField",
+                    "name": "node",
                     "plural": false,
                     "selections": [
                       {
-                        "kind": "ScalarField",
                         "alias": null,
+                        "args": null,
+                        "kind": "ScalarField",
                         "name": "id",
-                        "args": null,
                         "storageKey": null
                       },
                       {
-                        "kind": "ScalarField",
                         "alias": null,
+                        "args": null,
+                        "kind": "ScalarField",
                         "name": "name",
-                        "args": null,
                         "storageKey": null
                       },
                       {
-                        "kind": "ScalarField",
                         "alias": null,
-                        "name": "__typename",
                         "args": null,
+                        "kind": "ScalarField",
+                        "name": "__typename",
                         "storageKey": null
                       }
-                    ]
+                    ],
+                    "storageKey": null
                   },
                   {
-                    "kind": "ScalarField",
                     "alias": null,
-                    "name": "cursor",
                     "args": null,
+                    "kind": "ScalarField",
+                    "name": "cursor",
                     "storageKey": null
                   }
-                ]
+                ],
+                "storageKey": null
               },
               {
-                "kind": "LinkedField",
                 "alias": null,
-                "name": "pageInfo",
-                "storageKey": null,
                 "args": null,
                 "concreteType": "PageInfo",
+                "kind": "LinkedField",
+                "name": "pageInfo",
                 "plural": false,
                 "selections": [
                   {
-                    "kind": "ScalarField",
                     "alias": null,
-                    "name": "endCursor",
                     "args": null,
+                    "kind": "ScalarField",
+                    "name": "endCursor",
                     "storageKey": null
                   },
                   {
-                    "kind": "ScalarField",
                     "alias": null,
-                    "name": "hasNextPage",
                     "args": null,
+                    "kind": "ScalarField",
+                    "name": "hasNextPage",
                     "storageKey": null
                   }
-                ]
+                ],
+                "storageKey": null
               }
-            ]
+            ],
+            "storageKey": null
           },
           {
-            "kind": "LinkedHandle",
             "alias": null,
-            "name": "items",
             "args": (v1/*: any*/),
+            "filters": null,
             "handle": "connection",
             "key": "ItemList_items",
-            "filters": null
+            "kind": "LinkedHandle",
+            "name": "items"
           }
-        ]
+        ],
+        "storageKey": null
       }
     ]
   },
   "params": {
-    "operationKind": "query",
-    "name": "ItemListContainerPaginationQuery",
+    "cacheID": "125903346e870622a241cc2cd056587e",
     "id": null,
-    "text": "query ItemListContainerPaginationQuery(\n  $count: Int!\n  $cursor: Cursor\n) {\n  list {\n    ...ItemListContainer_list_1G22uz\n  }\n}\n\nfragment ItemListContainer_list_1G22uz on List {\n  items(first: $count, after: $cursor) {\n    edges {\n      node {\n        id\n        ...ItemContainer_item\n        __typename\n      }\n      cursor\n    }\n    pageInfo {\n      endCursor\n      hasNextPage\n    }\n  }\n}\n\nfragment ItemContainer_item on Item {\n  id\n  name\n}\n",
-    "metadata": {}
+    "metadata": {},
+    "name": "ItemListContainerPaginationQuery",
+    "operationKind": "query",
+    "text": "query ItemListContainerPaginationQuery(\n  $count: Int!\n  $cursor: Cursor\n) {\n  list {\n    ...ItemListContainer_list_1G22uz\n  }\n}\n\nfragment ItemContainer_item on Item {\n  id\n  name\n}\n\nfragment ItemListContainer_list_1G22uz on List {\n  items(first: $count, after: $cursor) {\n    edges {\n      node {\n        id\n        ...ItemContainer_item\n        __typename\n      }\n      cursor\n    }\n    pageInfo {\n      endCursor\n      hasNextPage\n    }\n  }\n}\n"
   }
 };
 })();
 // prettier-ignore
 (node/*: any*/).hash = '17fdd9fd152ec35b12c6c96465eef063';
+
 module.exports = node;

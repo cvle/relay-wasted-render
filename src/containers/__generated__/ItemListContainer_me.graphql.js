@@ -21,31 +21,34 @@ export type ItemListContainer_me$data = ItemListContainer_me;
 export type ItemListContainer_me$key = {
   +$data?: ItemListContainer_me$data,
   +$fragmentRefs: ItemListContainer_me$ref,
+  ...
 };
 */
 
 
 const node/*: ReaderFragment*/ = {
-  "kind": "Fragment",
-  "name": "ItemListContainer_me",
-  "type": "User",
-  "metadata": null,
   "argumentDefinitions": [],
+  "kind": "Fragment",
+  "metadata": null,
+  "name": "ItemListContainer_me",
   "selections": [
     {
-      "kind": "ScalarField",
       "alias": null,
-      "name": "username",
       "args": null,
+      "kind": "ScalarField",
+      "name": "username",
       "storageKey": null
     },
     {
+      "args": null,
       "kind": "FragmentSpread",
-      "name": "ItemContainer_me",
-      "args": null
+      "name": "ItemContainer_me"
     }
-  ]
+  ],
+  "type": "User",
+  "abstractKey": null
 };
 // prettier-ignore
 (node/*: any*/).hash = '21e0b67fce29fe173388904d9a56e242';
+
 module.exports = node;
