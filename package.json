@@ -10,7 +10,7 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-relay": "^10.1.2",
-    "react-scripts": "4.0.1",
+    "react-scripts": "5.0.1",
     "relay-compiler": "^10.1.2",
     "relay-local-schema": "^0.8.0",
     "relay-runtime": "^10.1.2"
